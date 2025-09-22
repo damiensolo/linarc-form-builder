@@ -34,7 +34,7 @@ jobs:
         run: yarn install --frozen-lockfile
         
       - name: Build
-        run: yarn build
+        run: NODE_ENV=production yarn build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

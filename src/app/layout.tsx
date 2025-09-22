@@ -32,11 +32,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-          metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://damie.github.io/linarc-form-builder' : 'http://localhost:3000'),
+          metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://damiensolo.github.io/linarc-form-builder' : 'http://localhost:3000'),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NODE_ENV === 'production' ? 'https://damie.github.io/linarc-form-builder' : 'http://localhost:3000',
+    url: process.env.NODE_ENV === 'production' ? 'https://damiensolo.github.io/linarc-form-builder' : 'http://localhost:3000',
     siteName: "Form Builder",
     title: "Form Builder - Create Beautiful Forms",
     description: "Create beautiful, responsive forms with our lightweight form builder and generate React code using shadcn/ui components.",

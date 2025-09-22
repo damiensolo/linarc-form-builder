@@ -29,11 +29,13 @@
     "target": "ES2017"
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "tailwind.config.tsdsa"  ],
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "tailwind.config.tsdsa",
+    "out/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
