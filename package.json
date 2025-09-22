@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build",
+    "deploy": "yarn export && touch out/.nojekyll"
   },
   "dependencies": {
     "@babel/parser": "^7.27.0",

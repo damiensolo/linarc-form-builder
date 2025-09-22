@@ -1,22 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/ingest/static/:path*",
-        destination: "https://eu-assets.i.posthog.com/static/:path*",
-      },
-      {
-        source: "/ingest/:path*",
-        destination: "https://eu.i.posthog.com/:path*",
-      },
-      {
-        source: "/ingest/decide",
-        destination: "https://eu.i.posthog.com/decide",
-      },
-    ];
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
   },
-  // This is required to support PostHog trailing slash API requests
+  // Disable server-side features for static export
+  async rewrites() {
+    return [];
+  },
+  // Remove PostHog rewrites for static export
   skipTrailingSlashRedirect: true,
 };
 
