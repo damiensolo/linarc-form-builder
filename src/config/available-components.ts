@@ -45,42 +45,17 @@ import { FieldValues } from "react-hook-form";
 const typographyComponents: FormComponentModel[] = [
   new FormComponentModel({
     id: "text",
-    label: "Text block",
+    label: "Rich Text",
     label_info: "WYSIWYG Editor",
     type: "text",
     category: "content",
     icon: "Text",
-    content: "Text",
+    content: "Rich Text",
   })
 ];
 
-const formComponents: FormComponentModel[] = [
-  new FormComponentModel({
-    id: "text-input",
-    label: "Text",
-    label_info: "Single line text input",
-    type: "input",
-    category: "form",
-    icon: "TextCursorInput",
-    attributes: { type: "text" },
-  }),
-  new FormComponentModel({
-    id: "textarea",
-    label: "Text Area",
-    label_info: "Multi-line text input",
-    type: "textarea",
-    category: "form",
-    icon: "AlignLeft",
-  }),
-  new FormComponentModel({
-    id: "number-input",
-    label: "Number",
-    label_info: "Input field for numeric values",
-    type: "number",
-    category: "form",
-    icon: "Hash",
-    attributes: { type: "number" },
-  }),
+// Hidden components - kept for future use but not shown in UI
+const hiddenComponents: FormComponentModel[] = [
   new FormComponentModel({
     id: "email-input",
     label: "Email",
@@ -125,6 +100,83 @@ const formComponents: FormComponentModel[] = [
     category: "form",
     icon: "Link",
     attributes: { type: "url" },
+  }),
+  new FormComponentModel({
+    id: "switch",
+    label: "Switch",
+    label_info: "Toggle switch",
+    label_description: "Switch Description",
+    type: "switch",
+    category: "form",
+    icon: "ToggleLeft",
+    properties: {
+      style: {
+        showLabel: "no",
+      },
+    },
+  }),
+  new FormComponentModel({
+    id: "button",
+    label: "Button",
+    label_info: "Button",
+    content: "Button",
+    type: "button",
+    category: "form",
+    icon: "SquareMousePointer",
+    properties: { style: { showLabel: "no" }, variant: "outline" },
+    attributes: { type: "button" }
+  }),
+  new FormComponentModel({
+    id: "submit-button",
+    label: "Submit",
+    label_info: "Button to submit form",
+    content: "Submit",
+    type: "submit-button",
+    category: "form",
+    icon: "SquareMousePointer",
+    properties: { style: { showLabel: "no" } },
+    attributes: { type: "submit" }
+  }),
+  new FormComponentModel({
+    id: "reset-button",
+    label: "Reset",
+    label_info: "Button to reset form input values",
+    content: "Reset",
+    type: "reset-button",
+    category: "form",
+    icon: "SquareMousePointer",
+    properties: { style: { showLabel: "no" }, variant: "outline" },
+    attributes: { type: "reset" }
+  }),
+];
+
+// Visible components - shown in the UI
+const formComponents: FormComponentModel[] = [
+  new FormComponentModel({
+    id: "text-input",
+    label: "Text",
+    label_info: "Single line text input",
+    type: "input",
+    category: "form",
+    icon: "TextCursorInput",
+    attributes: { type: "text" },
+  }),
+  new FormComponentModel({
+    id: "textarea",
+    label: "Text Area",
+    label_info: "Multi-line text input",
+    type: "textarea",
+    category: "form",
+    icon: "AlignLeft",
+  }),
+  new FormComponentModel({
+    id: "number-input",
+    label: "Number",
+    label_info: "Input field for numeric values",
+    type: "number",
+    category: "form",
+    icon: "Hash",
+    attributes: { type: "number" },
   }),
   new FormComponentModel({
     id: "select",
@@ -185,56 +237,12 @@ const formComponents: FormComponentModel[] = [
     icon: "Calendar",
     attributes: { placeholder: "Pick a date" },
   }),
-  new FormComponentModel({
-    id: "switch",
-    label: "Switch",
-    label_info: "Toggle switch",
-    label_description: "Switch Description",
-    type: "switch",
-    category: "form",
-    icon: "ToggleLeft",
-    properties: {
-      style: {
-        showLabel: "no",
-      },
-    },
-  }),
-  new FormComponentModel({
-    id: "button",
-    label: "Button",
-    label_info: "Button",
-    content: "Button",
-    type: "button",
-    category: "form",
-    icon: "SquareMousePointer",
-    properties: { style: { showLabel: "no" }, variant: "outline" },
-    attributes: { type: "button" }
-  }),
-  new FormComponentModel({
-    id: "submit-button",
-    label: "Submit",
-    label_info: "Button to submit form",
-    content: "Submit",
-    type: "submit-button",
-    category: "form",
-    icon: "SquareMousePointer",
-    properties: { style: { showLabel: "no" } },
-    attributes: { type: "submit" }
-  }),
-  new FormComponentModel({
-    id: "reset-button",
-    label: "Reset",
-    label_info: "Button to reset form input values",
-    content: "Reset",
-    type: "reset-button",
-    category: "form",
-    icon: "SquareMousePointer",
-    properties: { style: { showLabel: "no" }, variant: "outline" },
-    attributes: { type: "reset" }
-  }),
 ];
 
 export const AVAILABLE_COMPONENTS: FormComponentModel[] = [...typographyComponents, ...formComponents];
+
+// Export all components (visible + hidden) for internal use
+export const ALL_COMPONENTS: FormComponentModel[] = [...typographyComponents, ...formComponents, ...hiddenComponents];
 
 const typographyViews = {
   text: { render: (component: FormComponentModel, form: UseFormReturn<FieldValues, undefined>, field: ControllerRenderProps) => Text(component, form, field), renderDesignProperties: TextDesignProperties, reactCode: getReactCodeText },

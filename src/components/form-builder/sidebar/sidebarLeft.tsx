@@ -59,12 +59,6 @@ export function SidebarLeft() {
         ["date"].includes(comp.type)
       ),
     },
-    {
-      label: "Buttons",
-      components: AVAILABLE_COMPONENTS.filter((comp) =>
-        ["button", "submit-button", "reset-button"].includes(comp.type)
-      ),
-    },
   ];
 
   const ComponentItem = ({
