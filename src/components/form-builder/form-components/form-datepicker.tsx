@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/popover"
 import { DesignPropertiesViews } from "@/types/form-builder.types"
 import { GridGroup } from "../sidebar/groups/grid-group"
-import { HtmlGroup } from "../sidebar/groups/html-group"
 import { LabelGroup } from "../sidebar/groups/label-group"
 import { InputGroup } from "../sidebar/groups/input-group"    
 import { FormComponentModel } from "@/models/FormComponent"
@@ -99,7 +98,6 @@ export function getReactCode(component: FormComponentModel): ReactCode {
 export const DatePickerDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
-  html: <HtmlGroup />,
   label: <LabelGroup whitelist={["label", "labelPosition", "labelAlign", "showLabel"]} />,
   input: <InputGroup whitelist={["placeholder", "description"]} />,
   options: null,

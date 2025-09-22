@@ -3,7 +3,6 @@ import { Label } from "@/components/ui/label";
 import { DesignPropertiesViews } from "@/types/form-builder.types";
 import { FormComponentModel } from "@/models/FormComponent";
 import { GridGroup } from "../sidebar/groups/grid-group";
-import { HtmlGroup } from "../sidebar/groups/html-group";
 import { LabelGroup } from "../sidebar/groups/label-group";
 import { InputGroup } from "../sidebar/groups/input-group";
 import { cn, generateTWClassesForAllViewports, escapeHtml } from "@/lib/utils";
@@ -84,7 +83,6 @@ export function getReactCode(component: FormComponentModel): ReactCode {
 export const CheckboxDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
-  html: <HtmlGroup />,
   label: <LabelGroup whitelist={["label", "label_description"]} />,
   input: <InputGroup whitelist={["description", "asCard", "checked"]} />,
   options: null,

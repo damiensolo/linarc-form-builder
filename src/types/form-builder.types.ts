@@ -15,7 +15,6 @@ export type Viewports = 'sm' | 'md' | 'lg';
 export type DesignPropertiesViews = {
   base: React.ReactNode;
   grid: React.ReactNode;
-  html: React.ReactNode;
   label: React.ReactNode;
   input: React.ReactNode;
   button: React.ReactNode;

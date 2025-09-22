@@ -2,7 +2,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { DesignPropertiesViews, Viewports } from "@/types/form-builder.types";
 import { FormComponentModel } from "@/models/FormComponent";
-import { HtmlGroup } from "../sidebar/groups/html-group";
 import { GridGroup } from "../sidebar/groups/grid-group";
 import { LabelGroup } from "../sidebar/groups/label-group";
 import { InputGroup } from "../sidebar/groups/input-group";
@@ -115,7 +114,6 @@ export function getReactCode(component: FormComponentModel): ReactCode {
 export const RadioDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
-  html: <HtmlGroup />,
   label: (
     <LabelGroup
       whitelist={["label", "labelPosition", "labelAlign", "showLabel"]}

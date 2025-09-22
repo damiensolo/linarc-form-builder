@@ -7,17 +7,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Form Builder - Create Beautiful Forms",
-    template: "%s | Form Builder",
+    default: "Custom Forms",
+    template: "%s | Custom Forms",
   },
   description: "Create beautiful, responsive forms with our lightweight form builder and generate React code using shadcn/ui components.",
   keywords: ["form builder", "online forms", "form creator", "web forms", "form designer", "shadcn/ui", "react components", "react form builder"],
   authors: [{ name: "Igor Duspara" }],
   creator: "Igor Duspara",
-  publisher: "Form Builder",
+  publisher: "Custom Forms",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
   },
@@ -37,15 +36,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NODE_ENV === 'production' ? 'https://damiensolo.github.io/linarc-form-builder' : 'http://localhost:3000',
-    siteName: "Form Builder",
-    title: "Form Builder - Create Beautiful Forms",
+    siteName: "Custom Forms",
+    title: "Custom Forms",
     description: "Create beautiful, responsive forms with our lightweight form builder and generate React code using shadcn/ui components.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Form Builder Preview",
+        alt: "Custom Forms Preview",
       },
     ],
   },

@@ -15,6 +15,7 @@ import "./form-wysiwyg-editor.css";
 import { EditorToolbar } from "./editor-toolbar";
 import customClass from "./extensions/textCustomStyle";
 import { useFormBuilderStore } from "@/stores/form-builder-store";
+import { cn } from "@/lib/utils";
 interface FormWysiwygEditorProps {
   isEditable?: boolean;
   value: string;
@@ -141,9 +142,23 @@ export const FormWysiwygEditor: React.FC<FormWysiwygEditorProps> = memo(
     }
 
     return (
-      <>
-        <EditorContent editor={initEditor} />
-      </>
+      <div className="wysiwyg-editor-container">
+        {/* Toolbar - always show when editor is editable */}
+        {isEditable && initEditor && (
+          <div className="wysiwyg-toolbar border border-gray-200 rounded-t-md bg-gray-50 p-2">
+            <EditorToolbar editor={initEditor} isEditable={isEditable} />
+          </div>
+        )}
+        
+        {/* Editor Content */}
+        <div className={cn(
+          "wysiwyg-content border border-gray-200 min-h-[100px] p-3 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500",
+          isEditable && "rounded-b-md",
+          !isEditable && "rounded-md"
+        )}>
+          <EditorContent editor={initEditor} />
+        </div>
+      </div>
     );
   }
 );

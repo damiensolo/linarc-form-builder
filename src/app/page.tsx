@@ -26,7 +26,6 @@ import { useCallback, useMemo, useState } from "react";
 import { MobileNotification } from "@/components/form-builder/ui/mobile-notification";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn, getGridRows, updateColSpans } from "@/lib/utils";
-import { EditorToolbar } from "@/components/form-builder/form-components/wysiwyg/editor-toolbar";
 
 export default function FormBuilderPage() {
   const isMobile = useIsMobile();
@@ -211,20 +210,16 @@ export default function FormBuilderPage() {
           {mode === "editor" && (
             <>
               <div className="col-span-5 2xl:col-span-1 2xl:col-start-2 flex 2xl:justify-center">
-                {editor ? (
-                  <EditorToolbar editor={editor} isEditable={true} />
-                ) : (
-                  <div className="text-center flex flex-row items-center justify-center gap-1 border rounded-md h-9 px-4">
-                    <div
-                      className="max-w-80 overflow-y-hidden whitespace-nowrap text-sm outline-none scrollbar-hide"
-                      contentEditable
-                      suppressContentEditableWarning
-                      onBlur={(e) => updateFormTitle(e.target.innerText)}
-                    >
-                      {formTitle}
-                    </div>
+                <div className="text-center flex flex-row items-center justify-center gap-1 border rounded-md h-9 px-4">
+                  <div
+                    className="max-w-80 overflow-y-hidden whitespace-nowrap text-sm outline-none scrollbar-hide"
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => updateFormTitle(e.target.innerText)}
+                  >
+                    {formTitle}
                   </div>
-                )}
+                </div>
               </div>
             </>
           )}

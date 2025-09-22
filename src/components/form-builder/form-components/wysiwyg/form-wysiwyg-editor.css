@@ -1,5 +1,6 @@
 .ProseMirror {
   outline: none;
+  min-height: 60px;
 }
 
 .ProseMirror p.is-editor-empty:first-child::before {
@@ -8,4 +9,29 @@
   float: left;
   height: 0;
   pointer-events: none;
+}
+
+/* WYSIWYG Editor Container Styles */
+.wysiwyg-editor-container {
+  position: relative;
+  width: 100%;
+}
+
+.wysiwyg-toolbar {
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.wysiwyg-content {
+  background-color: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wysiwyg-content:hover {
+  border-color: #d1d5db;
+}
+
+/* Ensure proper spacing for the editor content */
+.wysiwyg-content .ProseMirror {
+  padding: 0;
 }

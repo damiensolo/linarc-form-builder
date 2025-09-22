@@ -125,7 +125,7 @@ export const RowColumn = ({ component, index, form }: SortableRowProps) => {
     <div
       ref={setNodeRef}
       className={cn(
-        "relative group self-end",
+        "relative group self-end mb-4",
         colSpanClasses,
         colStartClasses,
         mode === "preview" && visibilityClasses,
@@ -193,16 +193,17 @@ export const RowColumn = ({ component, index, form }: SortableRowProps) => {
         type="button"
         variant="link"
         size="icon"
-        className={cn(
-          "h-4 w-4 absolute -right-1.75 -top-5.5 m-0! hover:bg-primary/50 group-hover/component:opacity-100 opacity-0 cursor-pointer bg-primary text-white rounded-none",
-          component.id === selectedComponent?.id && "opacity-100"
-        )}
+          className={cn(
+            "h-6 w-6 absolute -right-2 -top-7 m-0! hover:bg-orange-600 group-hover/component:opacity-100 opacity-0 cursor-pointer bg-primary text-white rounded-none",
+            component.id === selectedComponent?.id && "opacity-100"
+          )}
+        style={{ top: '-30px' }}
         onClick={(e) => {
           e.stopPropagation();
           handleDelete(component.id);
         }}
       >
-        <Icons.Trash2Icon className="size-3" />
+        <Icons.Trash2Icon className="size-4" />
       </Button>
 
       <RenderEditorComponent

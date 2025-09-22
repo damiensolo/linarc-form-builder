@@ -7,7 +7,6 @@ import {
 } from "@/lib/utils";
 import { DesignPropertiesViews } from "@/types/form-builder.types";
 import { FormComponentModel } from "@/models/FormComponent";
-import { HtmlGroup } from "../sidebar/groups/html-group";
 import { GridGroup } from "../sidebar/groups/grid-group";
 import { UseFormReturn, FieldValues, ControllerRenderProps } from "react-hook-form";
 
@@ -64,7 +63,6 @@ export function getReactCode(component: FormComponentModel): ReactCode {
 export const TextDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
-  html: <HtmlGroup whitelist={["id", "class"]} />,
   label: null,
   input: null,
   options: null,

@@ -39,6 +39,7 @@ const ToolbarButton = memo(
     children: React.ReactNode;
   }) => (
     <Button
+      type="button"
       onClick={onClick}
       variant="ghost"
       size="sm"
@@ -81,7 +82,8 @@ const ToolbarDropdownMenu = memo(
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div
+          <button
+            type="button"
             className={cn(
               buttonVariants({ variant: "ghost", size: "sm" }),
               activeItem ? "bg-muted" : "bg-white"
@@ -94,7 +96,7 @@ const ToolbarDropdownMenu = memo(
               className={"text-primary"}
             />
             <Icon name="ChevronDown" className="w-2 h-2 text-primary" />
-          </div>
+          </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             {options.map((option) => {

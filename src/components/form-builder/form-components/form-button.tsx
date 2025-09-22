@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { DesignPropertiesViews } from "@/types/form-builder.types";
 import { FormComponentModel } from "@/models/FormComponent";
 import { GridGroup } from "../sidebar/groups/grid-group";
-import { HtmlGroup } from "../sidebar/groups/html-group";
 import { ButtonGroup } from "../sidebar/groups/button-group";
 import { cn, escapeHtml } from "@/lib/utils";
 import { UseFormReturn, FieldValues, ControllerRenderProps } from "react-hook-form";
@@ -74,7 +73,6 @@ export function getReactCode(component: FormComponentModel): ReactCode {
 export const ButtonDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
-  html: <HtmlGroup />,
   label: null,
   input: null,
   button: <ButtonGroup />,

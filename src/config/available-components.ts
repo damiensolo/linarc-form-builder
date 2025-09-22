@@ -186,15 +186,14 @@ const formComponents: FormComponentModel[] = [
     category: "form",
     icon: "List",
     options: [
-      { value: "option1", label: "Option 1", labelDescription: "Option 1 Description" },
-      { value: "option2", label: "Option 2", labelDescription: "Option 2 Description" },
+      { value: "option1", label: "Option 1", labelDescription: "" },
+      { value: "option2", label: "Option 2", labelDescription: "" },
     ],
   }),
   new FormComponentModel({
     id: "checkbox",
     label: "Checkbox",
     label_info: "Checkbox input",
-    label_description: "Checkbox Description",
     type: "checkbox",
     category: "form",
     icon: "SquareCheck",
@@ -212,8 +211,8 @@ const formComponents: FormComponentModel[] = [
     category: "form",
     icon: "ListChecks",
     options: [
-      { value: "option1", label: "Option 1", labelDescription: "Option 1 Description", checked: true },
-      { value: "option2", label: "Option 2", labelDescription: "Option 2 Description" },
+      { value: "option1", label: "Option 1", labelDescription: "", checked: true },
+      { value: "option2", label: "Option 2", labelDescription: "" },
     ],
   }),
   new FormComponentModel({
@@ -224,8 +223,8 @@ const formComponents: FormComponentModel[] = [
     category: "form",
     icon: "CircleDot",
     options: [
-      { value: "option1", label: "Option 1", labelDescription: "Option 1 Description" },
-      { value: "option2", label: "Option 2", labelDescription: "Option 2 Description" },
+      { value: "option1", label: "Option 1", labelDescription: "" },
+      { value: "option2", label: "Option 2", labelDescription: "" },
     ],
   }),
   new FormComponentModel({
