@@ -242,7 +242,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px] text-white">Project</span>
+                <span className="text-[11px] leading-[14px] text-white">Project</span>
               </div>
 
               {/* Plans Tab */}
@@ -253,7 +253,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h8a2 2 0 002-2V3a2 2 0 012 2v6h-3a3 3 0 00-3 3v3H6a2 2 0 01-2-2V5zm11 11a1 1 0 10-2 0v2a1 1 0 102 0v-2z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">Plans</span>
+                <span className="text-[11px] leading-[14px]">Plans</span>
               </div>
 
               {/* Schedule Tab */}
@@ -263,7 +263,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">Schedule</span>
+                <span className="text-[11px] leading-[14px]">Schedule</span>
               </div>
 
               {/* Budget Tab */}
@@ -274,7 +274,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">Budget</span>
+                <span className="text-[11px] leading-[14px]">Budget</span>
               </div>
 
               {/* RFI Tab */}
@@ -284,7 +284,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">RFI</span>
+                <span className="text-[11px] leading-[14px]">RFI</span>
               </div>
 
               {/* CO Tab */}
@@ -294,7 +294,7 @@ export default function FormBuilderPage() {
                     <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">CO</span>
+                <span className="text-[11px] leading-[14px]">CO</span>
               </div>
 
               {/* Submittals Tab */}
@@ -304,7 +304,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">Submittals</span>
+                <span className="text-[11px] leading-[14px]">Submittals</span>
               </div>
 
               {/* Punchlist Tab */}
@@ -315,7 +315,7 @@ export default function FormBuilderPage() {
                     <path fillRule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h8a2 2 0 002-2V3a2 2 0 012 2v6h-3a3 3 0 00-3 3v3H6a2 2 0 01-2-2V5z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <span className="text-[10px] leading-[14px]">Punchlist</span>
+                <span className="text-[11px] leading-[14px]">Punchlist</span>
               </div>
 
               {/* Spacer to push action icons to the right */}
@@ -365,15 +365,15 @@ export default function FormBuilderPage() {
               <div className="flex items-center gap-2.5 text-white font-lato font-medium text-[12px] leading-[16px]">
                 <span>Big Mall</span>
                 <div className="w-0 h-4 border-l border-[#809fb8] opacity-20"></div>
-                <span>4010 Moorpark Ave #228, San Jose, CA 95117, USA</span>
+                <span className="text-slate-200">4010 Moorpark Ave #228, San Jose, CA 95117, USA</span>
                 <div className="w-0 h-4 border-l border-[#809fb8] opacity-20"></div>
-                <span>Owner - Build Enterprises</span>
+                <span className="text-slate-200">Owner - Build Enterprises</span>
                 <div className="w-0 h-4 border-l border-[#809fb8] opacity-20"></div>
-                <span>GC - A to Z construction</span>
+                <span className="text-slate-200">GC - A to Z construction</span>
                 <div className="w-0 h-4 border-l border-[#809fb8] opacity-20"></div>
-                <span>PM - Matt Anderson</span>
+                <span className="text-slate-200">PM - Matt Anderson</span>
                 <div className="w-0 h-4 border-l border-[#809fb8] opacity-20"></div>
-                <span>+1 56565 - 7878</span>
+                <span className="text-slate-200">+1 56565 - 7878</span>
               </div>
               {/* Horizontal separator line */}
               <div className="absolute top-0 left-[90px] right-0 h-px bg-[#809fb8] opacity-20"></div>
@@ -492,7 +492,7 @@ export default function FormBuilderPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V3a2 2 0 012-2h4a2 2 0 012 2v4" />
                 </svg>
               </div>
-              <span className="text-[10px] font-lato">Dashboard</span>
+              <span className="text-[11px] font-lato">Dashboard</span>
             </div>
 
             {/* Log Icon */}
@@ -502,7 +502,7 @@ export default function FormBuilderPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <span className="text-[10px] font-lato">Log</span>
+              <span className="text-[11px] font-lato">Log</span>
             </div>
 
             {/* Completed Icon */}
@@ -512,7 +512,7 @@ export default function FormBuilderPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span className="text-[10px] font-lato">Completed</span>
+              <span className="text-[11px] font-lato">Completed</span>
             </div>
           </div>
 
