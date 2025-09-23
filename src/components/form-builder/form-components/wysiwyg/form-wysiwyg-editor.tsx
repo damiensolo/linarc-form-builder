@@ -148,7 +148,7 @@ export const FormWysiwygEditor: React.FC<FormWysiwygEditorProps> = memo(
         {isEditable && initEditor && (
           <div className={cn(
             "wysiwyg-toolbar bg-gray-50 p-2",
-            showBorder ? "border border-gray-200 rounded-t-md" : ""
+            showBorder ? "border border-gray-300 rounded-t-md" : ""
           )}>
             <EditorToolbar editor={initEditor} isEditable={isEditable} />
           </div>
@@ -157,7 +157,7 @@ export const FormWysiwygEditor: React.FC<FormWysiwygEditorProps> = memo(
         {/* Editor Content */}
         <div className={cn(
           "wysiwyg-content min-h-[100px] p-3",
-          showBorder && "border border-gray-200 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500",
+          showBorder && "border border-gray-300 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500",
           isEditable && showBorder && "rounded-b-md",
           !isEditable && showBorder && "rounded-md"
         )}>

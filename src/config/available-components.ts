@@ -75,15 +75,6 @@ const hiddenComponents: FormComponentModel[] = [
     attributes: { type: "password" },
   }),
   new FormComponentModel({
-    id: "file-input",
-    label: "File upload",
-    label_info: "Input field for file uploads",
-    type: "file",
-    category: "form",
-    icon: "Upload",
-    attributes: { type: "file" },
-  }),
-  new FormComponentModel({
     id: "tel-input",
     label: "Telephone",
     label_info: "Input field for telephone numbers",
@@ -235,6 +226,15 @@ const formComponents: FormComponentModel[] = [
     category: "form",
     icon: "Calendar",
     attributes: { placeholder: "Pick a date" },
+  }),
+  new FormComponentModel({
+    id: "file-input",
+    label: "File upload",
+    label_info: "Input field for file uploads",
+    type: "file",
+    category: "form",
+    icon: "Upload",
+    attributes: { type: "file" },
   }),
 ];
 

@@ -18,7 +18,7 @@
 }
 
 .wysiwyg-toolbar {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #d1d5db;
   background-color: #f9fafb;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .wysiwyg-content:hover {
-  border-color: #d1d5db;
+  border-color: #9ca3af;
 }
 
 /* Ensure proper spacing for the editor content */

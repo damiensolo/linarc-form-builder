@@ -64,7 +64,7 @@ export function MainCanvas() {
   return components.length > 0 ? (
     <div className="flex gap-4 h-full flex-col 3xl:flex-row">
       <div
-        className={`h-full w-full`}
+        className={`h-full w-full z-10`}
         onClick={() => {
           if (selectedComponent && enableDragging) {
             selectComponent(null);
@@ -75,7 +75,7 @@ export function MainCanvas() {
           className={cn(
             "transition-all duration-300",
             `${viewportEditorStyles[viewport]}`,
-            "mx-auto scrollbar-hide mt-6"
+            "mx-auto scrollbar-hide mt-6 z-10"
           )}
         >
           <CardContent>

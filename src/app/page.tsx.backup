@@ -382,95 +382,99 @@ export default function FormBuilderPage() {
         </div>
       </div>
 
-      {/* Form Title Bar Sub-Header - Full width with border */}
-      <div className="fixed top-[90px] left-0 right-0 z-50 bg-white border-b border-gray-300">
-        <div className="flex items-center justify-between p-2 pl-[98px] pr-2">
-          {/* Left Side */}
-          <div className="flex items-center gap-3">
-            <button className="flex items-center justify-center w-6 h-6 text-gray-600 hover:text-gray-900 transition-colors">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <span className="text-base font-semibold text-gray-900">Custom Form</span>
-          </div>
-
-          {/* Center - Form Title - Always present with same structure */}
-          <div className="flex-1 flex justify-center">
-            <div className={cn(
-              "text-center flex flex-row items-center justify-center gap-1 border rounded-md h-9 px-4",
-              mode !== "editor" && "invisible"
-            )}>
-              <div
-                className="max-w-80 overflow-y-hidden whitespace-nowrap text-sm outline-none scrollbar-hide"
-                contentEditable
-                suppressContentEditableWarning
-                onBlur={(e) => updateFormTitle(e.target.innerText)}
-              >
-                {formTitle}
-              </div>
+      {/* Form Title Bar Sub-Header - Positioned to the right of sidebar */}
+      <div className="fixed top-[90px] left-[90px] right-0 z-30 bg-white" style={{ borderBottom: '1px solid #d1d5db' }}>
+        <div className="w-full">
+          <div className="flex items-center justify-between p-2">
+            {/* Left Side */}
+            <div className="flex items-center gap-3">
+              {mode === "editor" && (
+                <>
+                  <button className="flex items-center justify-center w-6 h-6 text-gray-600 hover:text-gray-900 transition-colors">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <span className="text-base font-semibold text-gray-900">Custom Form</span>
+                </>
+              )}
             </div>
-          </div>
 
-          {/* Right Side - All controls together */}
-          <div className="hidden md:flex items-center gap-4">
-            <ToggleGroupNav
-              name="viewport"
-              items={viewportItems}
-              defaultValue={viewport}
-              onValueChange={(value) =>
-                updateViewport(value as "sm" | "md" | "lg")
-              }
-            />
-            
+            {/* Center - Form Title */}
             {mode === "editor" && (
-              <>
+              <div className="flex-1 flex justify-center">
+                <div className="text-center flex flex-row items-center justify-center gap-1 border rounded-md h-9 px-4">
+                  <div
+                    className="max-w-80 overflow-y-hidden whitespace-nowrap text-sm outline-none scrollbar-hide"
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => updateFormTitle(e.target.innerText)}
+                  >
+                    {formTitle}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Right Side - All controls together */}
+            <div className="hidden md:flex items-center gap-4">
+              <ToggleGroupNav
+                name="viewport"
+                items={viewportItems}
+                defaultValue={viewport}
+                onValueChange={(value) =>
+                  updateViewport(value as "sm" | "md" | "lg")
+                }
+              />
+              
+              {mode === "editor" && (
+                <>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="cursor-pointer"
+                    onClick={() => {
+                      updateMode("preview");
+                      selectComponent(null);
+                    }}
+                  >
+                    <PlayIcon className="h-4 w-4" />
+                    Preview
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      // TODO: Implement save functionality
+                      console.log("Save form");
+                    }}
+                    className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    Save
+                  </Button>
+                </>
+              )}
+              {mode === "preview" && (
                 <Button
-                  variant="outline"
+                  variant="default"
                   size="sm"
                   className="cursor-pointer"
-                  onClick={() => {
-                    updateMode("preview");
-                    selectComponent(null);
-                  }}
+                  onClick={() => updateMode("editor")}
                 >
-                  <PlayIcon className="h-4 w-4" />
-                  Preview
+                  <XIcon className="h-4 w-4" />
+                  Exit Preview
                 </Button>
-                <Button
-                  size="sm"
-                  onClick={() => {
-                    // TODO: Implement save functionality
-                    console.log("Save form");
-                  }}
-                  className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12" />
-                  </svg>
-                  Save
-                </Button>
-              </>
-            )}
-            {mode === "preview" && (
-              <Button
-                variant="default"
-                size="sm"
-                className="cursor-pointer"
-                onClick={() => updateMode("editor")}
-              >
-                <XIcon className="h-4 w-4" />
-                Exit Preview
-              </Button>
-            )}
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
       {!isMobile && (
         <>
           {/* Left Navigation Sidebar */}
-          <div className="fixed left-0 top-[90px] bottom-0 w-[90px] bg-white border-r border-gray-200 z-60 flex flex-col pt-4">
+          <div className="fixed left-0 top-[90px] bottom-0 w-[90px] bg-white border-r border-gray-200 z-30 flex flex-col pt-4">
             {/* Dashboard Icon */}
             <div className="flex flex-col items-center justify-center h-[60px] text-gray-600 hover:text-gray-900 cursor-pointer mb-4">
               <div className="w-[22px] h-[22px] mb-1 flex items-center justify-center">
@@ -522,7 +526,7 @@ export default function FormBuilderPage() {
 
                   <div className="flex-1 flex flex-col">
                     {/* Spacer for fixed headers */}
-                    <div className="h-[calc(90px+3.25rem+2px)] flex-shrink-0"></div>
+                    <div className="h-[calc(90px+3.25rem)] flex-shrink-0"></div>
                     
                     <main
                       className={cn(

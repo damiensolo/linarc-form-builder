@@ -105,7 +105,7 @@ export function SidebarRight() {
   }
 
   return (
-    <Sidebar side="right" className="border-l pb-16" style={{ top: 'calc(90px + 3.25rem)' }}>
+    <Sidebar side="right" className="border-l pb-16 z-40" style={{ top: 'calc(90px + 3.25rem)' }}>
       <SidebarContent>{sidebarContent}</SidebarContent>
     </Sidebar>
   );

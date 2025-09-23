@@ -110,7 +110,7 @@ export function SidebarLeft() {
   };
 
   return (
-    <Sidebar className="bg-white z-20" style={{ top: 'calc(90px + 3.25rem)', left: '90px' }}>
+    <Sidebar className="bg-white z-40" style={{ top: 'calc(90px + 3.25rem)', left: '90px' }}>
       <SidebarContent className="gap-0">
         {componentGroups.map((group) => (
           <SidebarGroup key={group.label}>
