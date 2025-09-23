@@ -8,6 +8,7 @@ import {
 import { DesignPropertiesViews } from "@/types/form-builder.types";
 import { FormComponentModel } from "@/models/FormComponent";
 import { GridGroup } from "../sidebar/groups/grid-group";
+import { TextGroup } from "../sidebar/groups/text-group";
 import { UseFormReturn, FieldValues, ControllerRenderProps } from "react-hook-form";
 
 export function Text(component: FormComponentModel, form: UseFormReturn<FieldValues, undefined>, field: ControllerRenderProps) {
@@ -64,7 +65,7 @@ export const TextDesignProperties: DesignPropertiesViews = {
   base: null,
   grid: <GridGroup />,
   label: null,
-  input: null,
+  input: <TextGroup />,
   options: null,
   button: null,
   validation: null,

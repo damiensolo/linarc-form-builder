@@ -99,6 +99,7 @@ export function RenderEditorComponent({ form, component }: FormComponentProps) {
       <FormWysiwygEditor
         value={component.content || ""}
         isEditable={selectedComponent?.id === component.id && mode === "editor"}
+        showBorder={component.getField("properties.style.showBorder", viewport) === "yes"}
         onChange={(content) => {
           updateComponent(component.id, "content", content, true);
           selectComponent(null);

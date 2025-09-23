@@ -24,6 +24,7 @@ export const DEFAULT_PROPERTIES: FormComponentProperties = {
     icon: "",
     iconPosition: "left",
     iconStrokeWidth: 2,
+    showBorder: "yes",
   },
   variant: "default",
 };

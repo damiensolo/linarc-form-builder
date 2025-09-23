@@ -22,6 +22,7 @@ interface FormWysiwygEditorProps {
   onChange?: (content: string) => void;
   onFocus?: () => void;
   onBlur?: (editor: Editor) => void;
+  showBorder?: boolean;
 }
 
 export const TextColorStyle = TextStyle.extend({
@@ -40,7 +41,7 @@ export const TextColorStyle = TextStyle.extend({
 });
 
 export const FormWysiwygEditor: React.FC<FormWysiwygEditorProps> = memo(
-  ({ value, onChange, isEditable = false, onFocus, onBlur }) => {
+  ({ value, onChange, isEditable = false, onFocus, onBlur, showBorder = true }) => {
     // Memoize editor extensions
     const extensions = useMemo(
       () => [
@@ -145,16 +146,20 @@ export const FormWysiwygEditor: React.FC<FormWysiwygEditorProps> = memo(
       <div className="wysiwyg-editor-container">
         {/* Toolbar - always show when editor is editable */}
         {isEditable && initEditor && (
-          <div className="wysiwyg-toolbar border border-gray-200 rounded-t-md bg-gray-50 p-2">
+          <div className={cn(
+            "wysiwyg-toolbar bg-gray-50 p-2",
+            showBorder ? "border border-gray-200 rounded-t-md" : ""
+          )}>
             <EditorToolbar editor={initEditor} isEditable={isEditable} />
           </div>
         )}
         
         {/* Editor Content */}
         <div className={cn(
-          "wysiwyg-content border border-gray-200 min-h-[100px] p-3 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500",
-          isEditable && "rounded-b-md",
-          !isEditable && "rounded-md"
+          "wysiwyg-content min-h-[100px] p-3",
+          showBorder && "border border-gray-200 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500",
+          isEditable && showBorder && "rounded-b-md",
+          !isEditable && showBorder && "rounded-md"
         )}>
           <EditorContent editor={initEditor} />
         </div>

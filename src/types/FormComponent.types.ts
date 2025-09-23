@@ -89,6 +89,7 @@ export interface FormComponentStyles {
   icon?: keyof typeof icons | "";
   iconPosition?: "left" | "right";
   iconStrokeWidth?: number;
+  showBorder?: "yes" | "no";
 }
 
 export type FormComponentAttributes = Partial<HTMLAttributes<HTMLElement>> & {
