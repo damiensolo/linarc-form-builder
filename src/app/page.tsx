@@ -395,22 +395,8 @@ export default function FormBuilderPage() {
             <span className="text-base font-semibold text-gray-900">Custom Form</span>
           </div>
 
-          {/* Center - Form Title - Always present with same structure */}
-          <div className="flex-1 flex justify-center">
-            <div className={cn(
-              "text-center flex flex-row items-center justify-center gap-1 border rounded-md h-9 px-4",
-              mode !== "editor" && "invisible"
-            )}>
-              <div
-                className="max-w-80 overflow-y-hidden whitespace-nowrap text-sm outline-none scrollbar-hide"
-                contentEditable
-                suppressContentEditableWarning
-                onBlur={(e) => updateFormTitle(e.target.innerText)}
-              >
-                {formTitle}
-              </div>
-            </div>
-          </div>
+          {/* Center - Empty space where form title was */}
+          <div className="flex-1"></div>
 
           {/* Right Side - All controls together */}
           <div className="hidden md:flex items-center gap-4">
@@ -522,7 +508,7 @@ export default function FormBuilderPage() {
 
                   <div className="flex-1 flex flex-col">
                     {/* Spacer for fixed headers */}
-                    <div className="h-[calc(90px+3.25rem+2px)] flex-shrink-0"></div>
+                    <div className="h-[calc(90px+3.25rem-2px)] flex-shrink-0"></div>
                     
                     <main
                       className={cn(
