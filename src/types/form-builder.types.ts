@@ -35,11 +35,13 @@ export interface FormBuilderStore {
   formTitle: string;
   editor: Editor | null;
   enableDragging: boolean;
+  activeTab: 'new' | 'existing';
   updateMode: (mode: FormBuilderStore['mode']) => void;
   updateViewport: (viewport: Viewports) => void;
   toggleJsonPreview: () => void;
   updateFormTitle: (title: string) => void;
   setEditor: (editor: Editor | null) => void;
+  updateActiveTab: (activeTab: 'new' | 'existing') => void;
   components: FormComponentModel[];
   selectedComponent: FormComponentModel | null;
   updateEnableDragging: (enableDragging: boolean) => void;

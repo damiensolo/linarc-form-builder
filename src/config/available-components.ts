@@ -51,6 +51,11 @@ const typographyComponents: FormComponentModel[] = [
     category: "content",
     icon: "Text",
     content: "Rich Text",
+    properties: {
+      style: {
+        showBorder: "no",
+      },
+    },
   })
 ];
 
@@ -238,13 +243,17 @@ const formComponents: FormComponentModel[] = [
   }),
 ];
 
-export const AVAILABLE_COMPONENTS: FormComponentModel[] = [...typographyComponents, ...formComponents];
+export const AVAILABLE_COMPONENTS: FormComponentModel[] = [...typographyComponents, ...formComponents, ...hiddenComponents];
 
 // Export all components (visible + hidden) for internal use
 export const ALL_COMPONENTS: FormComponentModel[] = [...typographyComponents, ...formComponents, ...hiddenComponents];
 
 const typographyViews = {
-  text: { render: (component: FormComponentModel, form: UseFormReturn<FieldValues, undefined>, field: ControllerRenderProps) => Text(component, form, field), renderDesignProperties: TextDesignProperties, reactCode: getReactCodeText },
+  text: { render: (component: FormComponentModel, form: UseFormReturn<FieldValues, undefined>, field: ControllerRenderProps) => {
+    // For Rich Text components, we need to use the WYSIWYG editor
+    // This will be handled by the render-editor-component.tsx
+    return Text(component, form, field);
+  }, renderDesignProperties: TextDesignProperties, reactCode: getReactCodeText },
 };
 
 const formViews = {

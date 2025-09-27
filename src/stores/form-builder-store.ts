@@ -29,6 +29,7 @@ export const useFormBuilderStore = create<FormBuilderStore>()(
       formTitle: "MyForm",
       editor: null,
       enableDragging: true,
+      activeTab: "new" as "new" | "existing",
       updateMode: (mode: FormBuilderStore['mode']) => set({ mode }),
       updateViewport: (viewport: Viewports) => set({ viewport }),
       toggleJsonPreview: () => set((state) => ({ showJson: !state.showJson })),
@@ -36,6 +37,7 @@ export const useFormBuilderStore = create<FormBuilderStore>()(
       updateEnableDragging: (enableDragging: boolean) =>
         set({ enableDragging }),
       setEditor: (editor: Editor | null) => set({ editor }),
+      updateActiveTab: (activeTab: "new" | "existing") => set({ activeTab }),
       addComponent: (component: FormComponentModel) => {
         const newComponent = new FormComponentModel({ ...component });
         let newId = generateComponentId(newComponent, get().components);

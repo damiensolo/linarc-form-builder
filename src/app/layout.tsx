@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   },
   description: "Create responsive forms with a lightweight form builder.",
   keywords: ["form builder", "online forms", "form creator", "web forms", "form designer", "shadcn/ui", "react components", "react form builder"],
-  authors: [{ name: "Igor Duspara" }],
-  creator: "Igor Duspara",
+  authors: [{ name: "ID" }],
+  creator: "ID",
   publisher: "Custom Forms",
   icons: {
     icon: [

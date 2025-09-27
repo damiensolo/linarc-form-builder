@@ -17,7 +17,6 @@ import { cn, generateTWClassesForAllViewports } from "@/lib/utils";
 import { renderComponent } from "@/config/available-components";
 import { FormComponentModel } from "@/models/FormComponent";
 import { FormWysiwygEditor } from "../form-components/wysiwyg/form-wysiwyg-editor";
-import { useState } from "react";
 
 export interface FormComponentProps {
   form: UseFormReturn<FieldValues, undefined>;
@@ -85,7 +84,7 @@ export function RenderEditorComponent({ form, component }: FormComponentProps) {
         );
       }}
     />
-  ) : (
+  ) : component.type === "text" ? (
     <div
       className={cn(
         "relative flex flex-col h-full",
@@ -100,17 +99,30 @@ export function RenderEditorComponent({ form, component }: FormComponentProps) {
         value={component.content || ""}
         isEditable={selectedComponent?.id === component.id && mode === "editor"}
         showBorder={component.getField("properties.style.showBorder", viewport) === "yes"}
-        onChange={(content) => {
+        onChange={(content: string) => {
           updateComponent(component.id, "content", content, true);
           selectComponent(null);
         }}
         onFocus={() => {
           updateEnableDragging(false);
         }}
-        onBlur={(editor) => {
+        onBlur={(editor: any) => {
           updateEnableDragging(true);
         }}
       />
+    </div>
+  ) : (
+    <div
+      className={cn(
+        "relative flex flex-col h-full",
+        selectedComponent?.id === component.id &&
+          mode === "editor" &&
+          "cursor-text bg-white"
+      )}
+      key={component.id}
+      data-item-id={component.id}
+    >
+      {renderComponent(component, form, { name: component.id, value: component.content || "", onChange: () => {}, onBlur: () => {}, ref: () => {} })}
     </div>
   );
 }

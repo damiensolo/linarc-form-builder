@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/sidebar";
 import { ComponentIcon } from "../helpers/component-icon";
 import { DragOverlay, useDraggable } from "@dnd-kit/core";
+import { TabNavigation } from "./tab-navigation";
+import { ExistingContent } from "./existing-content";
 
 interface ComponentGroup {
   label: string;
@@ -21,7 +23,7 @@ interface ComponentGroup {
 }
 
 export function SidebarLeft() {
-  const { addComponent } = useFormBuilderStore();
+  const { addComponent, activeTab, updateActiveTab } = useFormBuilderStore();
 
   const componentGroups: ComponentGroup[] = [
     {
@@ -57,6 +59,12 @@ export function SidebarLeft() {
       label: "Date & Time",
       components: AVAILABLE_COMPONENTS.filter((comp) =>
         ["date"].includes(comp.type)
+      ),
+    },
+    {
+      label: "Buttons",
+      components: AVAILABLE_COMPONENTS.filter((comp) =>
+        ["button", "submit-button", "reset-button"].includes(comp.type)
       ),
     },
   ];
@@ -110,22 +118,47 @@ export function SidebarLeft() {
   };
 
   return (
-    <Sidebar className="bg-white z-40" style={{ top: 'calc(90px + 3.25rem)', left: '90px' }}>
-      <SidebarContent className="gap-0">
-        {componentGroups.map((group) => (
-          <SidebarGroup key={group.label}>
-            <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-            <SidebarMenu className="gap-2">
-              {group.components.map((component, index) => (
-                <ComponentItem
-                  key={component.id}
-                  component={component}
-                  index={index}
-                />
-              ))}
-            </SidebarMenu>
-          </SidebarGroup>
-        ))}
+    <Sidebar className="bg-white z-40" style={{ top: 'calc(90px + 3.25rem)', left: '90px', height: 'calc(100vh - 90px - 3.25rem)' }}>
+      <SidebarContent className="gap-0 flex flex-col h-full">
+        {/* Tab Navigation */}
+        <div className="flex flex-col items-center justify-center pb-0 pt-2 px-0 relative shrink-0 w-full h-12">
+          <div className="w-full max-w-[299px]">
+            <TabNavigation 
+              activeTab={activeTab} 
+              onTabChange={updateActiveTab} 
+            />
+          </div>
+        </div>
+        
+        {/* Contextual Content Based on Active Tab */}
+        <div className="flex-1 overflow-y-auto overflow-x-hidden min-h-0">
+          <div className="transition-all duration-300 ease-in-out">
+            {activeTab === "new" ? (
+              /* New Components */
+              <div className="animate-in fade-in-0 slide-in-from-left-2 duration-300">
+                {componentGroups.map((group) => (
+                  <SidebarGroup key={group.label}>
+                    <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+                    <SidebarMenu className="gap-2">
+                      {group.components.map((component, index) => (
+                        <ComponentItem
+                          key={component.id}
+                          component={component}
+                          index={index}
+                        />
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroup>
+                ))}
+              </div>
+            ) : (
+              /* Existing Content */
+              <div className="animate-in fade-in-0 slide-in-from-right-2 duration-300">
+                <ExistingContent />
+              </div>
+            )}
+          </div>
+        </div>
       </SidebarContent>
     </Sidebar>
   );
