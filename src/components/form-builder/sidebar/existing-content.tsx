@@ -29,13 +29,13 @@ export function ExistingContent() {
       items: [
         {
           id: "project-1",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
         {
           id: "project-2", 
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
@@ -46,13 +46,13 @@ export function ExistingContent() {
       items: [
         {
           id: "schedule-1",
-          label: "Data Field/Table", 
+          label: "Data Object", 
           description: "Description",
           icon: "Database",
         },
         {
           id: "schedule-2",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description", 
           icon: "Database",
         },
@@ -63,19 +63,19 @@ export function ExistingContent() {
       items: [
         {
           id: "finance-1",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
         {
           id: "finance-2",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
         {
           id: "finance-3",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
@@ -86,13 +86,13 @@ export function ExistingContent() {
       items: [
         {
           id: "quality-1",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
         {
           id: "quality-2",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
@@ -103,13 +103,13 @@ export function ExistingContent() {
       items: [
         {
           id: "document-1",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },
         {
           id: "document-2",
-          label: "Data Field/Table",
+          label: "Data Object",
           description: "Description",
           icon: "Database",
         },

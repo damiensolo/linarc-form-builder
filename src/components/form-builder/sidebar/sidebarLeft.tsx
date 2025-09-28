@@ -6,8 +6,6 @@ import { AVAILABLE_COMPONENTS } from "@/config/available-components";
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
@@ -16,6 +14,7 @@ import { ComponentIcon } from "../helpers/component-icon";
 import { DragOverlay, useDraggable } from "@dnd-kit/core";
 import { TabNavigation } from "./tab-navigation";
 import { ExistingContent } from "./existing-content";
+import { CollapsibleSection } from "./collapsible-section";
 
 interface ComponentGroup {
   label: string;
@@ -136,9 +135,12 @@ export function SidebarLeft() {
             {activeTab === "new" ? (
               /* New Components */
               <div className="animate-in fade-in-0 slide-in-from-left-2 duration-300">
-                {componentGroups.map((group) => (
-                  <SidebarGroup key={group.label}>
-                    <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+                {componentGroups.map((group, index) => (
+                  <CollapsibleSection 
+                    key={group.label}
+                    title={group.label}
+                    defaultExpanded={index === 0} // First section expanded by default
+                  >
                     <SidebarMenu className="gap-2">
                       {group.components.map((component, index) => (
                         <ComponentItem
@@ -148,7 +150,7 @@ export function SidebarLeft() {
                         />
                       ))}
                     </SidebarMenu>
-                  </SidebarGroup>
+                  </CollapsibleSection>
                 ))}
               </div>
             ) : (
