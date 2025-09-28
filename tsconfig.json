@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "tailwind.config.tsdsa",
+    "tailwind.config.ts",
     "out/types/**/*.ts"
   ],
   "exclude": [
