@@ -25,16 +25,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
         
       - name: Build
-        run: NODE_ENV=production yarn build
+        run: NODE_ENV=production npm run build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
